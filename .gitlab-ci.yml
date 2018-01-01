@@ -10,7 +10,7 @@ before_script:
 build-debug:
  stage: Debug
  script:
-  - 'dotnet run'
+  - 'dotnet run --project ner-number-generator/'
  only:
    - master
 
