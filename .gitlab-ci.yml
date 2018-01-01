@@ -1,16 +1,25 @@
 image: microsoft/dotnet:latest
 
 stages:
-  - build
+  - Debug
+  - Release
 
 before_script:
-  - 'apt-get update'
-  - 'apt-get install -y nuget'
-  - 'nuget restore ner-number-generator.sln'
+  - 'dotnet restore'
 
-build:
- stage: build
+build-debug:
+ stage: Debug
  script:
-  - 'dotnet publish -c Release -o out'
+  - 'dotnet run'
  only:
    - master
+
+build-release:
+ stage: Release
+ script:
+  - 'dotnet publish -c Release -o out'
+ artifacts:
+  paths:
+   - out/
+ only:
+  - master
