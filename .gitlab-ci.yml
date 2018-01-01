@@ -14,4 +14,4 @@ build:
   - 'nuget pack "ner-number-generator/ner-number-generator.csproj" -IncludeReferencedProjects -Build -Properties Configuration=Release -Version 0.0.1.%CI_BUILD_ID%'
   - 'nuget push \*.nupkg %NugetAPIKey% -Source %NugetSource%'
  only:
-   - masterAP=case xbuild /t:Build /p:Configuration="Release" /p:Platform="Any CPU" ner-number-generator.sln
+   - master
