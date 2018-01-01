@@ -9,6 +9,6 @@ before_script:
 build:
  stage: build
  script:
-  - 'dotnet publish -c Release -o out'
+  - 'dotnet build'
  only:
    - master
