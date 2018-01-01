@@ -1,25 +1,14 @@
 image: microsoft/dotnet:latest
 
 stages:
-  - Debug
-  - Release
+  - build
 
 before_script:
   - 'dotnet restore'
 
-build-debug:
- stage: Debug
- script:
-  - 'dotnet publish -c Debug -o out'
- only:
-   - master
-
-build-release:
- stage: Release
+build:
+ stage: build
  script:
   - 'dotnet publish -c Release -o out'
- artifacts:
-  paths:
-   - Release/
  only:
-  - master
+   - master
