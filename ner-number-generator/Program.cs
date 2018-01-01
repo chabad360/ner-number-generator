@@ -10,7 +10,7 @@ namespace ner_number_generator
             Console.WriteLine("Please enter the amount of LEDs you wish to control (max. 52)");
             string numS = Console.ReadLine();
             int num = Convert.ToInt16(numS);
-            if (num > 52 || num <= 0)
+            if (num => 52 || num < 0)
             {
                 Console.WriteLine("Please enter the a number between 1 and 52");
                 goto start;
