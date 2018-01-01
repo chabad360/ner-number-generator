@@ -11,8 +11,6 @@ before_script:
 build:
  stage: build
  script:
-  - 'msbuild ner-number-generator.sln /t:ReBuild /p:Configuration=Release;Platform="Any CPU"'
-  - 'nuget pack "ner-number-generator/ner-number-generator.csproj" -IncludeReferencedProjects -Build -Properties Configuration=Release -Version 0.0.1.%CI_BUILD_ID%'
-  - 'nuget push \*.nupkg %NugetAPIKey% -Source %NugetSource%'
+  - 'dotnet publish -c Release -o out'
  only:
    - master
