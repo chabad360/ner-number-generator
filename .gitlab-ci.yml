@@ -10,7 +10,7 @@ before_script:
 build-debug:
  stage: Debug
  script:
-  - 'dotnet publish -c Debug -o out
+  - 'dotnet publish -c Debug -o out'
  only:
    - master
 
