@@ -1,6 +1,6 @@
 ﻿# Ner Lighting System LED Array Generator
 
-[![pipeline status](https://gitlab.com/chabad360/ner-number-generator/badges/master/pipeline.svg)](https://gitlab.com/chabad360/ner-number-generator/commits/master)
+[![pipeline status](https://gitlab.com/chabad360/ner-number-generator/badges/master/pipeline.svg)](https://gitlab.com/chabad360/ner-number-generator/pipelines)
 
 This is a tool to generate the necessary led arrays for the [Ner Lighting System project](https://gitlab.com/chabad360/ner)
 ### How to use
