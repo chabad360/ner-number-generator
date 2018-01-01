@@ -10,7 +10,7 @@ before_script:
 build-debug:
  stage: Debug
  script:
-  - 'dotnet run --project ner-number-generator/'
+  - 'dotnet publish -c Debug -o out
  only:
    - master
 
@@ -20,6 +20,6 @@ build-release:
   - 'dotnet publish -c Release -o out'
  artifacts:
   paths:
-   - out/
+   - Release/
  only:
   - master
