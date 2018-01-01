@@ -4,6 +4,7 @@ stages:
   - build
 
 before_script:
+  - 'apt-get update'
   - 'apt-get install -y nuget'
   - 'nuget restore ner-number-generator.sln'
 
