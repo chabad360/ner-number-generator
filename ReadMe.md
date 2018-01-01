@@ -7,4 +7,4 @@ This is a tool to generate the necessary led arrays for the [Ner Lighting System
 1. Download and install the [.Net Core](https://github.com/dotnet/core/blob/master/release-notes/download-archives/2.0.3.md)
 2. Clone this repository
 3. Set your current directory to that of the repository
-4. run `dotnet run --project ner-number-generator`  and follow the prompts
+4. run `dotnet run --project ner-number-generator/`  and follow the prompts
