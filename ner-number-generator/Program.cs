@@ -2,21 +2,55 @@
 
 namespace ner_number_generator
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string args)
         {
+            int num = 0;
+            string numS = "0";
             start:
-            Console.WriteLine("Please enter the amount of LEDs you wish to control (max. 52)");
-            string numS = Console.ReadLine();
-            int num = Convert.ToInt16(numS);
-            if (num >= 52 || num < 0)
+            try
+            {   if (args == null)
+                {
+                    Console.WriteLine("Please enter the amount of LEDs you wish to control (max. 52)");
+                    numS = Console.ReadLine();
+                }
+                else
+                {
+                    numS = args;
+                }
+                num = Convert.ToInt16(numS);
+                if (num < 1)
+                {
+                    throw new NumberIsTooSmall();
+                }
+                else if (num > 52)
+                {
+                    throw new NumberIsTooBig();
+                }
+            }
+            catch(NumberIsTooSmall)
             {
-                Console.WriteLine("Please enter the a number between 1 and 52");
+                Console.WriteLine("Please enter a number between 1 and 52");
+                goto start;
+            }
+            catch(NumberIsTooBig)
+            {
+                Console.WriteLine("Please enter a number between 1 and 52");
+                goto start;
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Please enter a number between 1 and 52");
                 goto start;
             }
             Console.WriteLine("Please Save the following output:");
             Console.WriteLine();
+            print(num);
+        }
+
+        public static void print(int num)
+        {
             Console.WriteLine("#define amount " + num + " // The amount of LEDs, necessary to turn them on.");
             Console.WriteLine(" ");
             Console.Write("/* All our LEDs (in the addressable mode) */ int leds[amount] = { 53 /* This is LED number 1 but because we use serial, we need to have it at another pin, and 53 works */");
@@ -32,8 +66,20 @@ namespace ner_number_generator
                 Console.Write(", \"" + i + "\"");
             }
             Console.Write(" };");
-            Console.Read();
+        }
+    }
 
+    public class NumberIsTooBig : Exception
+    {
+        public NumberIsTooBig()
+        {
+        }
+    }
+    
+    public class NumberIsTooSmall : Exception
+    {
+        public NumberIsTooSmall()
+        {
         }
     }
 }
