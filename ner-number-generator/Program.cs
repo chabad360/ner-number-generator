@@ -23,19 +23,19 @@ namespace ner_number_generator
                 num = Convert.ToInt16(numS);
                 if (num < 1)
                 {
-                    throw new NumberIsTooSmall();
+                    throw new NumberIsTooSmallException();
                 }
                 else if (num > 52)
                 {
-                    throw new NumberIsTooBig();
+                    throw new NumberIsTooBigException();
                 }
             }
-            catch(NumberIsTooSmall)
+            catch(NumberIsTooSmallException)
             {
                 Console.WriteLine("Please enter a number between 1 and 52");
                 goto start;
             }
-            catch(NumberIsTooBig)
+            catch(NumberIsTooBigException)
             {
                 Console.WriteLine("Please enter a number between 1 and 52");
                 goto start;
@@ -70,16 +70,16 @@ namespace ner_number_generator
         }
     }
 
-    public class NumberIsTooBig : Exception
+    public class NumberIsTooBigException : Exception
     {
-        public NumberIsTooBig()
+        public NumberIsTooBigException()
         {
         }
     }
     
-    public class NumberIsTooSmall : Exception
+    public class NumberIsTooSmallException : Exception
     {
-        public NumberIsTooSmall()
+        public NumberIsTooSmallException()
         {
         }
     }
