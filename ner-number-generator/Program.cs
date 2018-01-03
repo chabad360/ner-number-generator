@@ -4,20 +4,21 @@ namespace ner_number_generator
 {
     public class Program
     {
-        public static void Main(string args)
+        public static void Main(string[] args)
         {
             int num = 0;
             string numS = "0";
             start:
             try
-            {   if (args == null)
+            {   
+                if (args == null || args.Length == 0)
                 {
                     Console.WriteLine("Please enter the amount of LEDs you wish to control (max. 52)");
                     numS = Console.ReadLine();
                 }
                 else
                 {
-                    numS = args;
+                    numS = args[1].ToString();
                 }
                 num = Convert.ToInt16(numS);
                 if (num < 1)
