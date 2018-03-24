@@ -2,7 +2,7 @@
 
 [![pipeline status](https://gitlab.com/chabad360/ner-number-generator/badges/master/pipeline.svg)](https://gitlab.com/chabad360/ner-number-generator/pipelines)
 
-This is a tool to generate the necessary led arrays for the [Ner Lighting System project](https://gitlab.com/chabad360/ner)
+This is a tool to generate the necessary led arrays for the [Ner Lighting System project](chabad360/ner)
 ### How to use
 1. Download and install the [.Net Core](https://github.com/dotnet/core/blob/master/release-notes/download-archives/2.0.3.md)
 2. Clone this repository
